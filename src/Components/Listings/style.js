@@ -9,10 +9,11 @@ export const ListingsContainer = styled.div`
 export const ListingsNumber = styled.h2`
   margin: 0;
   padding-top: 65px;
+  padding-bottom: 40px;
 `;
 
 export const ResultsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
 `;

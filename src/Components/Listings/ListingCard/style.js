@@ -7,7 +7,6 @@ export const Card = styled.div`
   width: 450px;
   height: 550px;
   border-radius: 20px;
-  margin: 50px 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
