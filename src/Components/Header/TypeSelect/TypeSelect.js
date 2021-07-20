@@ -5,8 +5,12 @@ import { TypeSelectMenu } from './style';
 const TypeSelect = () => {
   return (
     <div>
-      <TypeSelectMenu name="tipologia" id="tipologia">
-        <option value="" selected disabled hidden>
+      <TypeSelectMenu
+        name="tipologia"
+        id="tipologia"
+        defaultValue={'Tipologia'}
+      >
+        <option value="Tipologia" disabled hidden>
           Tipologia
         </option>
         <option value="private">Private room</option>

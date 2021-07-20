@@ -41,6 +41,7 @@ const Listings = () => {
             beds={listing.beds}
             description={listing.description}
             price={listing.price}
+            key={listing.id}
           />
         ))}
       </ResultsContainer>

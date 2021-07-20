@@ -22,8 +22,7 @@ const Header = () => {
         </LogoContainer>
         <SelectContainer>
           <TypeSelect />
-          <AvailableSelect id="available" name="available" />
-          <label for="available">Disponibile subito</label>
+          <AvailableSelect />
         </SelectContainer>
       </HeaderContainer>
     </div>

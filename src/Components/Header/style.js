@@ -27,5 +27,5 @@ export const SelectContainer = styled.div`
   display: flex;
   height: 70px;
   align-items: flex-end;
-  background-color: lightcoral;
+  padding-left: 60px;
 `;
