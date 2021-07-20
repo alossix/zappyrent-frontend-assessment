@@ -13,7 +13,7 @@ export const Card = styled.div`
 
 export const ImageContainer = styled.div`
   background-image: url(${(p) => p.src});
-  background-size: contain;
+  background-size: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   height: 40%;

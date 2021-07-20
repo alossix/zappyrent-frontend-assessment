@@ -3,7 +3,11 @@ import axios from 'axios';
 
 import ListingCard from './ListingCard/ListingCard';
 
-import { ListingsContainer } from './style';
+import {
+  ListingsContainer,
+  ListingsNumber,
+  ResultsContainer,
+} from './style';
 
 const Listings = () => {
   const [listings, setListings] = useState([]);
@@ -20,19 +24,26 @@ const Listings = () => {
 
   return (
     <ListingsContainer>
-      {listings.map((listing) => (
-        <ListingCard
-          listingId={listing.id}
-          image={listing.images[0].url}
-          type={listing.type}
-          title={listing.title}
-          tenants={listing.tenants}
-          baths={listing.baths}
-          beds={listing.beds}
-          description={listing.description}
-          price={listing.price}
-        />
-      ))}
+      <ListingsNumber>
+        {listings.length === 1
+          ? '1 alloggio trovato'
+          : `${listings.length} alloggi trovati`}
+      </ListingsNumber>
+      <ResultsContainer>
+        {listings.map((listing) => (
+          <ListingCard
+            listingId={listing.id}
+            image={listing.images[0].url}
+            type={listing.type}
+            title={listing.title}
+            tenants={listing.tenants}
+            baths={listing.baths}
+            beds={listing.beds}
+            description={listing.description}
+            price={listing.price}
+          />
+        ))}
+      </ResultsContainer>
     </ListingsContainer>
   );
 };

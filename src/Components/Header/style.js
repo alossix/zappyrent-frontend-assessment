@@ -6,23 +6,26 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
-  margin: 0 150px;
-  background-color: lightblue;
+  height: 250px;
+  padding: 0 150px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 6px;
 `;
 
 export const LogoContainer = styled.div`
-  height: 50px;
+  display: flex;
+  align-items: center;
+  height: 180px;
 `;
 
 export const ZappyRentLogo = styled.img.attrs({
   src: `${Logo}`,
 })`
-  height: 50px;
+  height: 30px;
 `;
 
 export const SelectContainer = styled.div`
   display: flex;
-  height: 100%;
-  align-items: center;
+  height: 70px;
+  align-items: flex-end;
+  background-color: lightcoral;
 `;
