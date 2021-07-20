@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import ListingCard from './ListingCard/ListingCard';
+
+import { ListingsContainer } from './style';
+
 const Listings = () => {
   const [listings, setListings] = useState([]);
 
@@ -15,14 +19,19 @@ const Listings = () => {
   }, []);
 
   return (
-    <div>
+    <ListingsContainer>
       {listings.map((listing) => (
-        <>
-          <p>{listing.id}</p>
-          <img src={listing.images[0].url} />
-        </>
+        <ListingCard
+          listingId={listing.id}
+          image={listing.images[0].url}
+          type={listing.type}
+          title={listing.title}
+          tenants={listing.tenants}
+          baths={listing.baths}
+          beds={listing.beds}
+        />
       ))}
-    </div>
+    </ListingsContainer>
   );
 };
 
