@@ -6,6 +6,9 @@ const TypeSelect = () => {
   return (
     <div>
       <TypeSelectMenu name="tipologia" id="tipologia">
+        <option value="" selected disabled hidden>
+          Tipologia
+        </option>
         <option value="private">Private room</option>
         <option value="entire">Entire property</option>
         <option value="shared">Shared room</option>
