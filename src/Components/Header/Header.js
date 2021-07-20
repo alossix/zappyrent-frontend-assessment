@@ -13,7 +13,11 @@ import {
   SelectContainer,
 } from './style';
 
-const Header = () => {
+const Header = ({
+  listings,
+  setPropertyType,
+  setAvailableChecked,
+}) => {
   return (
     <div>
       <HeaderContainer>
@@ -21,9 +25,14 @@ const Header = () => {
           <ZappyRentLogo />
         </LogoContainer>
         <SelectContainer>
-          <TypeSelect />
-          <AvailableSelect id="available" name="available" />
-          <label for="available">Disponibile subito</label>
+          <TypeSelect
+            listings={listings}
+            setPropertyType={setPropertyType}
+          />
+          <AvailableSelect
+            listings={listings}
+            setAvailableChecked={setAvailableChecked}
+          />
         </SelectContainer>
       </HeaderContainer>
     </div>

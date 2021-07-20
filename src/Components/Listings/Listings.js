@@ -1,28 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const Listings = () => {
-  const [listings, setListings] = useState([]);
+import ListingCard from './ListingCard/ListingCard';
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'https://my-json-server.typicode.com/zappyrent/frontend-assessment/properties',
-      );
-      setListings(result.data);
-    };
-    fetchData();
-  }, []);
+import {
+  ListingsContainer,
+  ListingsNumber,
+  ResultsContainer,
+} from './style';
 
+const Listings = ({ listings }) => {
   return (
-    <div>
-      {listings.map((listing) => (
-        <>
-          <p>{listing.id}</p>
-          <img src={listing.images[0].url} />
-        </>
-      ))}
-    </div>
+    <ListingsContainer>
+      <ListingsNumber>
+        {listings.length === 1
+          ? '1 alloggio trovato'
+          : `${listings.length} alloggi trovati`}
+      </ListingsNumber>
+      <ResultsContainer>
+        {listings.map((listing) => (
+          <ListingCard
+            key={listing.id}
+            image={listing.images[0].url}
+            type={listing.type}
+            title={listing.title}
+            tenants={listing.tenants}
+            baths={listing.baths}
+            beds={listing.beds}
+            description={listing.description}
+            price={listing.price}
+          />
+        ))}
+      </ResultsContainer>
+    </ListingsContainer>
   );
 };
 
