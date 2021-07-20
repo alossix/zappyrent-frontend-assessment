@@ -29,26 +29,24 @@ export const ListingTitle = styled.h2`
 
 export const ListingDetailsContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: white;
-  width: 100%;
+  width: 75%;
 `;
 
 export const ListingDetailContainer = styled.div`
   display: flex;
   align-items: flex-end;
-  margin: 0 5px;
-  background-color: gray;
 `;
 
 export const ListingDetailNumber = styled.p`
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 400;
   padding-right: 5px;
-  background-color: lightgreen;
+  margin: -1px 0;
 `;
 
 export const ListingDetailText = styled.p`
   color: gray;
-  background-color: lightsalmon;
+  margin: 0;
 `;

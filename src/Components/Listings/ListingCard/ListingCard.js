@@ -27,15 +27,21 @@ const ListingCard = ({
       <ListingDetailsContainer>
         <ListingDetailContainer>
           <ListingDetailNumber>{tenants}</ListingDetailNumber>
-          <ListingDetailText>inquilini</ListingDetailText>
+          <ListingDetailText>
+            {tenants === 1 ? 'inquilino' : 'inquilini'}
+          </ListingDetailText>
         </ListingDetailContainer>
         <ListingDetailContainer>
           <ListingDetailNumber>{baths}</ListingDetailNumber>
-          <ListingDetailText>bagno</ListingDetailText>
+          <ListingDetailText>
+            {baths === 1 ? 'bagno' : 'bagni'}
+          </ListingDetailText>
         </ListingDetailContainer>
         <ListingDetailContainer>
           <ListingDetailNumber>{beds}</ListingDetailNumber>
-          <ListingDetailText>letto</ListingDetailText>
+          <ListingDetailText>
+            {beds === 1 ? 'letto' : 'letti'}
+          </ListingDetailText>
         </ListingDetailContainer>
       </ListingDetailsContainer>
     </Card>
