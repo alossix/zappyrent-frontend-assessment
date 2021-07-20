@@ -9,6 +9,10 @@ import {
   ListingDetailContainer,
   ListingDetailNumber,
   ListingDetailText,
+  ListingDescriptionContainer,
+  ListingDescription,
+  HR,
+  CanoneTitle,
 } from './style';
 
 const ListingCard = ({
@@ -18,13 +22,14 @@ const ListingCard = ({
   tenants,
   baths,
   beds,
+  description,
 }) => {
   return (
     <Card>
       <ImageContainer src={image} />
-      <ListingType>{type}</ListingType>
-      <ListingTitle>{title}</ListingTitle>
       <ListingDetailsContainer>
+        <ListingType>{type}</ListingType>
+        <ListingTitle>{title}</ListingTitle>
         <ListingDetailContainer>
           <ListingDetailNumber>{tenants}</ListingDetailNumber>
           <ListingDetailText>
@@ -44,6 +49,11 @@ const ListingCard = ({
           </ListingDetailText>
         </ListingDetailContainer>
       </ListingDetailsContainer>
+      <ListingDescriptionContainer>
+        <ListingDescription>{description}</ListingDescription>
+      </ListingDescriptionContainer>
+      <HR />
+      <CanoneTitle>Canone d'affitto</CanoneTitle>
     </Card>
   );
 };

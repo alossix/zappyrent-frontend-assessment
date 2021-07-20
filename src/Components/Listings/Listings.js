@@ -29,6 +29,7 @@ const Listings = () => {
           tenants={listing.tenants}
           baths={listing.baths}
           beds={listing.beds}
+          description={listing.description}
         />
       ))}
     </ListingsContainer>
