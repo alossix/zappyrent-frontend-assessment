@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 200px;
-  margin: 0 200px;
+  margin: 0 150px;
   background-color: lightblue;
 `;
 

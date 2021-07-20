@@ -12,7 +12,11 @@ import {
   ListingDescriptionContainer,
   ListingDescription,
   HR,
+  CanoneContainer,
   CanoneTitle,
+  CanonePriceContainer,
+  CanonePrice,
+  CanoneMese,
 } from './style';
 
 const ListingCard = ({
@@ -23,6 +27,7 @@ const ListingCard = ({
   baths,
   beds,
   description,
+  price,
 }) => {
   return (
     <Card>
@@ -31,29 +36,38 @@ const ListingCard = ({
         <ListingType>{type}</ListingType>
         <ListingTitle>{title}</ListingTitle>
         <ListingDetailContainer>
-          <ListingDetailNumber>{tenants}</ListingDetailNumber>
-          <ListingDetailText>
-            {tenants === 1 ? 'inquilino' : 'inquilini'}
-          </ListingDetailText>
+          <>
+            <ListingDetailNumber>{tenants}</ListingDetailNumber>
+            <ListingDetailText>
+              {tenants === 1 ? 'inquilino' : 'inquilini'}
+            </ListingDetailText>
+          </>
+          <>
+            <ListingDetailNumber>{baths}</ListingDetailNumber>
+            <ListingDetailText>
+              {baths === 1 ? 'bagno' : 'bagni'}
+            </ListingDetailText>
+          </>
+          <>
+            <ListingDetailNumber>{beds}</ListingDetailNumber>
+            <ListingDetailText>
+              {beds === 1 ? 'letto' : 'letti'}
+            </ListingDetailText>
+          </>
         </ListingDetailContainer>
-        <ListingDetailContainer>
-          <ListingDetailNumber>{baths}</ListingDetailNumber>
-          <ListingDetailText>
-            {baths === 1 ? 'bagno' : 'bagni'}
-          </ListingDetailText>
-        </ListingDetailContainer>
-        <ListingDetailContainer>
-          <ListingDetailNumber>{beds}</ListingDetailNumber>
-          <ListingDetailText>
-            {beds === 1 ? 'letto' : 'letti'}
-          </ListingDetailText>
-        </ListingDetailContainer>
+        <ListingDescriptionContainer>
+          <ListingDescription>{description}</ListingDescription>
+        </ListingDescriptionContainer>
       </ListingDetailsContainer>
-      <ListingDescriptionContainer>
-        <ListingDescription>{description}</ListingDescription>
-      </ListingDescriptionContainer>
+
       <HR />
-      <CanoneTitle>Canone d'affitto</CanoneTitle>
+      <CanoneContainer>
+        <CanoneTitle>Canone d'affitto</CanoneTitle>
+        <CanonePriceContainer>
+          <CanonePrice>€&nbsp;{price}&nbsp;</CanonePrice>
+          <CanoneMese>/mese</CanoneMese>
+        </CanonePriceContainer>
+      </CanoneContainer>
     </Card>
   );
 };

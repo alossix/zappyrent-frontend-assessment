@@ -4,8 +4,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
-  height: 500px;
+  width: 450px;
+  height: 550px;
   border-radius: 20px;
   margin: 50px 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -22,22 +22,23 @@ export const ImageContainer = styled.div`
 
 export const ListingDetailsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  background-color: white;
-  width: 75%;
+  flex-direction: column;
+  padding: 0 10px;
 `;
 
 export const ListingType = styled.p`
   color: gray;
+  margin: 0;
 `;
 
 export const ListingTitle = styled.h2`
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 800;
 `;
 
 export const ListingDetailContainer = styled.div`
   display: flex;
+  width: 100%;
   align-items: flex-end;
 `;
 
@@ -51,11 +52,12 @@ export const ListingDetailNumber = styled.p`
 export const ListingDetailText = styled.p`
   color: gray;
   margin: 0;
+  padding-right: 25px;
 `;
 
 export const ListingDescriptionContainer = styled.div`
   width: 100%;
-  height: 70px;
+  height: 80px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -72,8 +74,29 @@ export const HR = styled.hr`
   border-top: none;
 `;
 
-export const CanoneTitle = styled.h2`
+export const CanoneContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 10px;
+`;
+
+export const CanoneTitle = styled.p`
   color: #05a8a4;
   font-size: 24px;
   font-weight: bold;
+`;
+
+export const CanonePriceContainer = styled.div`
+  display: flex;
+`;
+
+export const CanonePrice = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+`;
+export const CanoneMese = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
 `;
