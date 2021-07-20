@@ -7,27 +7,33 @@ import Listings from './Components/Listings/Listings';
 function App() {
   const [listings, setListings] = useState([]);
   const [availableChecked, setAvailableChecked] = useState(false);
-  const [propertyType, setPropertyType] = useState('');
+  const [propertyType, setPropertyType] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
+      const results = await axios(
         'https://my-json-server.typicode.com/zappyrent/frontend-assessment/properties',
       );
-      if (availableChecked && propertyType === '') {
-        setListings(result.data.filter((r) => r.available === true));
-      } else if (availableChecked && propertyType !== '') {
+      if (availableChecked && propertyType.length === 0) {
         setListings(
-          result.data.filter(
-            (r) => r.available === true && r.type === propertyType,
+          results.data.filter((result) => result.available === true),
+        );
+      } else if (availableChecked && propertyType.length > 0) {
+        setListings(
+          results.data.filter(
+            (result) =>
+              result.available === true &&
+              propertyType.includes(result.type),
           ),
         );
-      } else if (!availableChecked && propertyType !== '') {
+      } else if (!availableChecked && propertyType.length > 0) {
         setListings(
-          result.data.filter((r) => r.type === propertyType),
+          results.data.filter((result) =>
+            propertyType.includes(result.type),
+          ),
         );
       } else {
-        setListings(result.data);
+        setListings(results.data);
       }
     };
     fetchData();
@@ -38,12 +44,12 @@ function App() {
       <Header
         listings={listings}
         setAvailableChecked={setAvailableChecked}
+        propertyType={propertyType}
         setPropertyType={setPropertyType}
       />
       <Listings
         listings={listings}
         availableChecked={availableChecked}
-        propertyType={propertyType}
       />
     </div>
   );

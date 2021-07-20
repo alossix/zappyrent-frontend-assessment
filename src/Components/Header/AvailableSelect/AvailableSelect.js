@@ -4,7 +4,6 @@ import { AvailableSelectCheckbox } from './style';
 
 const AvailableSelect = ({ listings, setAvailableChecked }) => {
   const availableChecked = (event) => {
-    console.log(event.target.checked);
     setAvailableChecked(event.target.checked);
   };
 

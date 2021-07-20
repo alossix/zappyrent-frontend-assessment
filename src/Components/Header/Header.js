@@ -15,6 +15,7 @@ import {
 
 const Header = ({
   listings,
+  propertyType,
   setPropertyType,
   setAvailableChecked,
 }) => {
@@ -27,6 +28,7 @@ const Header = ({
         <SelectContainer>
           <TypeSelect
             listings={listings}
+            propertyType={propertyType}
             setPropertyType={setPropertyType}
           />
           <AvailableSelect
