@@ -3,9 +3,9 @@ import React from 'react';
 import { AvailableSelectCheckbox } from './style';
 
 const AvailableSelect = () => {
-  const availableChecked = () => {
-    console.log(`this runs`);
+  const availableChecked = (event) => {
     // need to filter results based on boolean 'available' t/f
+    console.log(event.target.checked);
   };
 
   return (
@@ -14,7 +14,7 @@ const AvailableSelect = () => {
       <AvailableSelectCheckbox
         id="available"
         name="available"
-        onClick={availableChecked}
+        onChange={(event) => availableChecked(event)}
       />
     </>
   );

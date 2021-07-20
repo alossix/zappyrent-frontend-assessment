@@ -13,7 +13,7 @@ import {
   SelectContainer,
 } from './style';
 
-const Header = () => {
+const Header = ({ listings }) => {
   return (
     <div>
       <HeaderContainer>
@@ -21,8 +21,8 @@ const Header = () => {
           <ZappyRentLogo />
         </LogoContainer>
         <SelectContainer>
-          <TypeSelect />
-          <AvailableSelect />
+          <TypeSelect listings={listings} />
+          <AvailableSelect listings={listings} />
         </SelectContainer>
       </HeaderContainer>
     </div>

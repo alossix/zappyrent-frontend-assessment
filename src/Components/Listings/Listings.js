@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 import ListingCard from './ListingCard/ListingCard';
 
@@ -9,19 +8,7 @@ import {
   ResultsContainer,
 } from './style';
 
-const Listings = () => {
-  const [listings, setListings] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'https://my-json-server.typicode.com/zappyrent/frontend-assessment/properties',
-      );
-      setListings(result.data);
-    };
-    fetchData();
-  }, []);
-
+const Listings = ({ listings }) => {
   return (
     <ListingsContainer>
       <ListingsNumber>
@@ -32,7 +19,7 @@ const Listings = () => {
       <ResultsContainer>
         {listings.map((listing) => (
           <ListingCard
-            listingId={listing.id}
+            key={listing.id}
             image={listing.images[0].url}
             type={listing.type}
             title={listing.title}
@@ -41,7 +28,6 @@ const Listings = () => {
             beds={listing.beds}
             description={listing.description}
             price={listing.price}
-            key={listing.id}
           />
         ))}
       </ResultsContainer>
