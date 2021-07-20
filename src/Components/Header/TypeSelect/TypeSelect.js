@@ -2,9 +2,9 @@ import React from 'react';
 
 import { TypeSelectMenu } from './style';
 
-const TypeSelect = () => {
+const TypeSelect = ({ listings, setPropertyType }) => {
   const typeSelected = (event) => {
-    console.log(event.target.value);
+    setPropertyType(event.target.value);
   };
 
   return (

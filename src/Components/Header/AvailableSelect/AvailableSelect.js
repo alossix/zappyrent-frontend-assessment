@@ -2,10 +2,10 @@ import React from 'react';
 
 import { AvailableSelectCheckbox } from './style';
 
-const AvailableSelect = () => {
+const AvailableSelect = ({ listings, setAvailableChecked }) => {
   const availableChecked = (event) => {
-    // need to filter results based on boolean 'available' t/f
     console.log(event.target.checked);
+    setAvailableChecked(event.target.checked);
   };
 
   return (
