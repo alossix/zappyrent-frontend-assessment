@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AvailableSelectCheckbox } from './style';
+import { AvailableNowLabel, AvailableSelectCheckbox } from './style';
 
 const AvailableSelect = ({ listings, setAvailableChecked }) => {
   const availableChecked = (event) => {
@@ -9,7 +9,9 @@ const AvailableSelect = ({ listings, setAvailableChecked }) => {
 
   return (
     <>
-      <label htmlFor="available">Disponibile subito</label>
+      <AvailableNowLabel htmlFor="available">
+        Disponibile subito
+      </AvailableNowLabel>
       <AvailableSelectCheckbox
         id="available"
         name="available"
