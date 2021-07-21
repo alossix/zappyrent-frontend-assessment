@@ -2,16 +2,17 @@ import styled from 'styled-components';
 
 export const AvailableNowLabel = styled.label`
   color: gray;
+  font-size: 22px;
 `;
 
 export const AvailableSelectCheckbox = styled.input.attrs({
   type: 'checkbox',
 })`
   appearance: none;
-  width: 24px;
-  min-width: 24px;
-  height: 24px;
-  border: 1px solid lightgray;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  border: 2px solid lightgray;
   border-radius: 8px;
   position: relative;
   cursor: pointer;
@@ -21,10 +22,12 @@ export const AvailableSelectCheckbox = styled.input.attrs({
     &:after {
       content: '';
       position: absolute;
-      width: 15px;
-      height: 15px;
-      border: 3px solid white;
-      border-radius: 7px;
+      left: -1px;
+      top: -1px;
+      width: 17px;
+      height: 17px;
+      border: 4px solid white;
+      border-radius: 6px;
     }
   }
 `;
