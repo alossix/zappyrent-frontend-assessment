@@ -4,7 +4,7 @@ export const ListingDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 45%;
+  height: 35%;
   padding: 15px;
   border-bottom: 1px solid gainsboro;
 `;

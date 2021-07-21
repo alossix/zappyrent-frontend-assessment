@@ -21,7 +21,7 @@ export const LogoContainer = styled.div`
 export const ZappyRentLogo = styled.img.attrs({
   src: `${Logo}`,
 })`
-  height: 25px;
+  height: 20px;
 `;
 
 export const SelectContainer = styled.div`

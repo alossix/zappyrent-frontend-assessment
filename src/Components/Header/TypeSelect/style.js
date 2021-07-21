@@ -44,7 +44,7 @@ export const PropertyTypeMenu = styled.div`
 export const OptionContainer = styled.div`
   display: flex;
   align-items: center;
-  height: 37px;
+  height: 35px;
 `;
 
 export const PropertyTypeLabel = styled.label`
