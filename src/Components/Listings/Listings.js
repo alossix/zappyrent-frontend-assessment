@@ -28,6 +28,7 @@ const Listings = ({ listings }) => {
             beds={listing.beds}
             description={listing.description}
             price={listing.price}
+            available={listing.available}
           />
         ))}
       </ResultsContainer>

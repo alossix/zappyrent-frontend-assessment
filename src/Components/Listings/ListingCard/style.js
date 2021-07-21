@@ -19,6 +19,19 @@ export const ImageContainer = styled.div`
   width: 100%;
 `;
 
+export const AvailableButton = styled.button`
+  position: relative;
+  width: 150px;
+  height: 40px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  top: 10px;
+  left: 10px;
+`;
+
 export const CanoneContainer = styled.div`
   display: flex;
   align-items: center;

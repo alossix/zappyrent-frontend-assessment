@@ -5,6 +5,7 @@ import ListingDescription from './ListingDescription/ListingDescription';
 import {
   Card,
   ImageContainer,
+  AvailableButton,
   CanoneContainer,
   CanoneTitle,
   CanonePriceContainer,
@@ -21,10 +22,15 @@ const ListingCard = ({
   beds,
   description,
   price,
+  available,
 }) => {
   return (
     <Card>
-      <ImageContainer src={image} />
+      <ImageContainer src={image}>
+        {available && (
+          <AvailableButton>Disponibile subito</AvailableButton>
+        )}
+      </ImageContainer>
       <ListingDescription
         image={image}
         type={type}
