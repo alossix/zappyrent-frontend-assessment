@@ -13,7 +13,7 @@ const Listings = ({ listings }) => {
     <ListingsContainer>
       <ListingsNumber>
         {listings.length === 1
-          ? '1 alloggio trovato'
+          ? `1 alloggio trovato`
           : `${listings.length} alloggi trovati`}
       </ListingsNumber>
       <ResultsContainer>
@@ -28,6 +28,7 @@ const Listings = ({ listings }) => {
             beds={listing.beds}
             description={listing.description}
             price={listing.price}
+            available={listing.available}
           />
         ))}
       </ResultsContainer>

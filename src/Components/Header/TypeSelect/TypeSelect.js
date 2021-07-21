@@ -1,29 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { TypeSelectMenu } from './style';
+import Checkbox from '../../Common/Checkbox/Checkbox';
+import CaretDown from './caret-down.png';
+import CaretUp from './caret-up.png';
 
-const TypeSelect = ({ listings, setPropertyType }) => {
-  const typeSelected = (event) => {
-    setPropertyType(event.target.value);
+import {
+  MenuButton,
+  CaretImage,
+  PropertyTypeMenu,
+  OptionContainer,
+  PropertyTypeLabel,
+} from './style';
+
+const TypeSelect = ({ propertyType, setPropertyType }) => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  const clickHandler = (event) => {
+    setMenuIsOpen((isOpen) => !isOpen);
+    console.log(menuIsOpen);
   };
 
+  const propertyTypeArr = propertyType.map((p) => p);
+
+  const changePropertyType = (event) => {
+    if (event.target.checked) {
+      propertyTypeArr.push(event.target.name);
+      console.log(propertyTypeArr);
+      setPropertyType(propertyTypeArr);
+    } else {
+      console.log(`runs too`);
+      propertyTypeArr.splice(
+        propertyTypeArr.indexOf(event.target.name),
+        1,
+      );
+      setPropertyType(propertyTypeArr);
+    }
+  };
+
+  const propertyTypeValues = [
+    'Private Room',
+    'Entire Property',
+    'Shared Room',
+    'Studio',
+  ];
+
   return (
-    <div>
-      <TypeSelectMenu
-        name="tipologia"
-        id="tipologia"
-        defaultValue={'Tipologia'}
-        onChange={(event) => typeSelected(event)}
-      >
-        <option value="Tipologia" disabled hidden>
-          Tipologia
-        </option>
-        <option value="Private Room">Private room</option>
-        <option value="Entire Property">Entire property</option>
-        <option value="Shared Room">Shared room</option>
-        <option value="Studio">Studio</option>
-      </TypeSelectMenu>
-    </div>
+    <>
+      <MenuButton onClick={clickHandler}>
+        Tipologia{' '}
+        <CaretImage src={menuIsOpen ? CaretDown : CaretUp} />
+      </MenuButton>
+
+      <PropertyTypeMenu className={menuIsOpen ? 'open' : ''}>
+        {propertyTypeValues.map((val, index) => (
+          <OptionContainer key={index}>
+            <Checkbox
+              labelName={val}
+              id={val}
+              name={val}
+              onChange={changePropertyType}
+            />
+            <PropertyTypeLabel htmlFor={val}>{val}</PropertyTypeLabel>
+          </OptionContainer>
+        ))}
+      </PropertyTypeMenu>
+    </>
   );
 };
 

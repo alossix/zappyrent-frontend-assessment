@@ -1,22 +1,25 @@
 import React from 'react';
 
-import { AvailableSelectCheckbox } from './style';
+import Checkbox from '../../Common/Checkbox/Checkbox';
+
+import { AvailableContainer, AvailableLabel } from './style';
 
 const AvailableSelect = ({ listings, setAvailableChecked }) => {
   const availableChecked = (event) => {
-    console.log(event.target.checked);
     setAvailableChecked(event.target.checked);
   };
 
   return (
-    <>
-      <label htmlFor="available">Disponibile subito</label>
-      <AvailableSelectCheckbox
+    <AvailableContainer>
+      <AvailableLabel htmlFor="available">
+        Disponibile subito
+      </AvailableLabel>
+      <Checkbox
         id="available"
         name="available"
         onChange={(event) => availableChecked(event)}
       />
-    </>
+    </AvailableContainer>
   );
 };
 
