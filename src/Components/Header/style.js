@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 250px;
+  height: 180px;
   padding: 0 150px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 6px;
 `;
@@ -20,7 +20,7 @@ export const LogoContainer = styled.div`
 export const ZappyRentLogo = styled.img.attrs({
   src: `${Logo}`,
 })`
-  height: 30px;
+  height: 25px;
 `;
 
 export const SelectContainer = styled.div`
@@ -29,4 +29,5 @@ export const SelectContainer = styled.div`
   align-items: flex-end;
   height: 70px;
   padding-left: 60px;
+  padding-bottom: 20px;
 `;

@@ -41,7 +41,7 @@ const ListingCard = ({
         description={description}
       />
       <CanoneContainer>
-        <CanoneTitle>Canone d'affitto</CanoneTitle>
+        <CanoneTitle>Canone d’affitto</CanoneTitle>
         <CanonePriceContainer>
           <CanonePrice>€&nbsp;{price}&nbsp;</CanonePrice>
           <CanoneMese>/mese</CanoneMese>
