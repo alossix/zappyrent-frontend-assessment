@@ -4,9 +4,8 @@ export const CustomCheckbox = styled.input.attrs({
   type: 'checkbox',
 })`
   appearance: none;
-  width: 28px;
-  min-width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border: 2px solid lightgray;
   border-radius: 8px;
   position: relative;
@@ -14,13 +13,17 @@ export const CustomCheckbox = styled.input.attrs({
 
   &:checked {
     background-color: #05a8a4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       content: '';
       position: absolute;
-      left: -1px;
-      top: -1px;
-      width: 17px;
-      height: 17px;
+      width: 76%;
+      height: 75%;
       border: 4px solid white;
       border-radius: 6px;
     }

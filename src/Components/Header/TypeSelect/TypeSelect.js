@@ -18,12 +18,13 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
   const propertyTypeArr = propertyType.map((p) => p);
 
   const changePropertyType = (event) => {
+    console.log(event);
     if (event.target.checked) {
-      propertyTypeArr.push(event.target.value);
+      propertyTypeArr.push(event.target.name);
       setPropertyType(propertyTypeArr);
     } else {
       propertyTypeArr.splice(
-        propertyTypeArr.indexOf(event.target.value),
+        propertyTypeArr.indexOf(event.target.name),
         1,
       );
       setPropertyType(propertyTypeArr);
@@ -43,7 +44,7 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
       {menuIsOpen && (
         <PropertyTypeMenu>
           {propertyTypeValues.map((val, index) => (
-            <OptionContainer>
+            <OptionContainer key={index}>
               <Checkbox
                 labelName={val}
                 id={val}

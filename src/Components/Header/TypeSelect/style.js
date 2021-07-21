@@ -23,6 +23,7 @@ export const PropertyTypeMenu = styled.div`
   background-color: white;
   border: 2px solid lightgray;
   border-radius: 25px;
+  z-index: 100;
 `;
 
 export const OptionContainer = styled.div`
