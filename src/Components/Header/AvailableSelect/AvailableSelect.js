@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { AvailableNowLabel, AvailableSelectCheckbox } from './style';
+import Checkbox from '../../Common/Checkbox/Checkbox';
+
+import { AvailableContainer, AvailableLabel } from './style';
 
 const AvailableSelect = ({ listings, setAvailableChecked }) => {
   const availableChecked = (event) => {
@@ -8,16 +10,16 @@ const AvailableSelect = ({ listings, setAvailableChecked }) => {
   };
 
   return (
-    <>
-      <AvailableNowLabel htmlFor="available">
+    <AvailableContainer>
+      <AvailableLabel htmlFor="available">
         Disponibile subito
-      </AvailableNowLabel>
-      <AvailableSelectCheckbox
+      </AvailableLabel>
+      <Checkbox
         id="available"
         name="available"
         onChange={(event) => availableChecked(event)}
       />
-    </>
+    </AvailableContainer>
   );
 };
 

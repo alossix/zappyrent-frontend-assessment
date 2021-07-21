@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Checkbox from '../../Common/Checkbox/Checkbox';
+import {
+  MenuButton,
+  PropertyTypeMenu,
+  OptionContainer,
+  PropertyTypeLabel,
+} from './style';
 
 const TypeSelect = ({ propertyType, setPropertyType }) => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  const clickHandler = (event) => {
+    setMenuIsOpen((isOpen) => !isOpen);
+  };
+
   const propertyTypeArr = propertyType.map((p) => p);
 
   const changePropertyType = (event) => {
@@ -16,7 +30,7 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
     }
   };
 
-  const values = [
+  const propertyTypeValues = [
     'Private Room',
     'Entire Property',
     'Shared Room',
@@ -25,16 +39,24 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
 
   return (
     <>
-      {values.map((val, index) => (
-        <label key={index}>
-          <input
-            type="checkbox"
-            value={val}
-            onChange={changePropertyType}
-          />
-          {val}
-        </label>
-      ))}
+      <MenuButton onClick={clickHandler}>Tipologia</MenuButton>
+      {menuIsOpen && (
+        <PropertyTypeMenu>
+          {propertyTypeValues.map((val, index) => (
+            <OptionContainer>
+              <Checkbox
+                labelName={val}
+                id={val}
+                name={val}
+                onChange={changePropertyType}
+              />
+              <PropertyTypeLabel htmlFor={val}>
+                {val}
+              </PropertyTypeLabel>
+            </OptionContainer>
+          ))}
+        </PropertyTypeMenu>
+      )}
     </>
   );
 };
