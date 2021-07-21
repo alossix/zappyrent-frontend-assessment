@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ListingsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 150px;
+  margin: 0 150px 100px 150px;
 `;
 
 export const ListingsNumber = styled.h2`

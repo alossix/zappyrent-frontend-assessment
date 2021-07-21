@@ -13,12 +13,12 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
 
   const clickHandler = (event) => {
     setMenuIsOpen((isOpen) => !isOpen);
+    console.log(menuIsOpen);
   };
 
   const propertyTypeArr = propertyType.map((p) => p);
 
   const changePropertyType = (event) => {
-    console.log(event);
     if (event.target.checked) {
       propertyTypeArr.push(event.target.name);
       setPropertyType(propertyTypeArr);
@@ -41,23 +41,19 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
   return (
     <>
       <MenuButton onClick={clickHandler}>Tipologia</MenuButton>
-      {menuIsOpen && (
-        <PropertyTypeMenu>
-          {propertyTypeValues.map((val, index) => (
-            <OptionContainer key={index}>
-              <Checkbox
-                labelName={val}
-                id={val}
-                name={val}
-                onChange={changePropertyType}
-              />
-              <PropertyTypeLabel htmlFor={val}>
-                {val}
-              </PropertyTypeLabel>
-            </OptionContainer>
-          ))}
-        </PropertyTypeMenu>
-      )}
+      <PropertyTypeMenu className={menuIsOpen ? 'open' : ''}>
+        {propertyTypeValues.map((val, index) => (
+          <OptionContainer key={index}>
+            <Checkbox
+              labelName={val}
+              id={val}
+              name={val}
+              onChange={changePropertyType}
+            />
+            <PropertyTypeLabel htmlFor={val}>{val}</PropertyTypeLabel>
+          </OptionContainer>
+        ))}
+      </PropertyTypeMenu>
     </>
   );
 };

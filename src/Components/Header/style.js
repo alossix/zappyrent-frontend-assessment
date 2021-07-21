@@ -25,7 +25,7 @@ export const ZappyRentLogo = styled.img.attrs({
 
 export const SelectContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-end;
   height: 70px;
   padding-left: 60px;

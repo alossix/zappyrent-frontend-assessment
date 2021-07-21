@@ -9,5 +9,6 @@ export const AvailableLabel = styled.label`
   font-size: 22px;
   font-weight: 600;
   color: gray;
-  padding-right: 10px;
+  padding-right: 8px;
+  margin-left: 50px;
 `;

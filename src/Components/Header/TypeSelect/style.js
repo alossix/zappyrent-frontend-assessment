@@ -14,16 +14,21 @@ export const MenuButton = styled.button`
 `;
 
 export const PropertyTypeMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 255px;
-  min-width: 220px;
-  padding: 15px;
-  background-color: white;
-  border: 2px solid lightgray;
-  border-radius: 25px;
-  z-index: 100;
+  display: none;
+
+  &.open {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 255px;
+    min-width: 220px;
+    padding: 15px;
+    background-color: white;
+    border: 2px solid lightgray;
+    border-radius: 25px;
+    z-index: 100;
+  }
 `;
 
 export const OptionContainer = styled.div`
