@@ -4,9 +4,9 @@ export const CustomCheckbox = styled.input.attrs({
   type: 'checkbox',
 })`
   appearance: none;
-  width: 30px;
-  height: 30px;
-  border: 2px solid lightgray;
+  min-width: 30px;
+  min-height: 30px;
+  border: 2px solid gainsboro;
   border-radius: 8px;
   position: relative;
   cursor: pointer;
@@ -22,9 +22,9 @@ export const CustomCheckbox = styled.input.attrs({
       align-items: center;
       content: '';
       position: absolute;
-      width: 76%;
-      height: 75%;
-      border: 4px solid white;
+      width: 77%;
+      height: 77%;
+      border: 3px solid white;
       border-radius: 6px;
     }
   }

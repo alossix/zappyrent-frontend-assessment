@@ -8,7 +8,7 @@ export const AvailableContainer = styled.div`
 
 export const AvailableLabel = styled.label`
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: darkgray;
   padding-right: 8px;

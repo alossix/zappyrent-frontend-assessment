@@ -1,16 +1,26 @@
 import styled from 'styled-components';
 
 export const MenuButton = styled.button`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
   position: relative;
   background-color: white;
   border-radius: 25px;
-  width: 200px;
+  width: 180px;
   height: 45px;
   border: 2px solid gainsboro;
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: darkgray;
+`;
+
+export const CaretImage = styled.img`
+  position: absolute;
+  right: 10px;
+  width: 25px;
 `;
 
 export const PropertyTypeMenu = styled.div`
@@ -22,7 +32,7 @@ export const PropertyTypeMenu = styled.div`
     flex-direction: column;
     position: absolute;
     top: 165px;
-    min-width: 200px;
+    min-width: 180px;
     padding: 12px;
     background-color: white;
     border: 2px solid gainsboro;
@@ -34,12 +44,12 @@ export const PropertyTypeMenu = styled.div`
 export const OptionContainer = styled.div`
   display: flex;
   align-items: center;
-  height: 47px;
+  height: 37px;
 `;
 
 export const PropertyTypeLabel = styled.label`
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: darkgray;
   padding-left: 6px;

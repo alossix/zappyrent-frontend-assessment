@@ -8,8 +8,10 @@ export const ListingsContainer = styled.div`
 
 export const ListingsNumber = styled.h2`
   margin: 0;
-  padding-top: 65px;
-  padding-bottom: 40px;
+  padding-top: 45px;
+  padding-bottom: 30px;
+  font-size: 16px;
+  font-weight: 600;
 `;
 
 export const ResultsContainer = styled.div`
