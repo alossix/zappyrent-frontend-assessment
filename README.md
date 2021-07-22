@@ -15,10 +15,12 @@ Number of columns on desktop view is responsive based on screen sizing; mobile d
 Installation and Usage
 ***
 
-Fork this repo
-Clone this repo
+1. Fork this repo
+2. Clone this repo: 
+   $ git clone https://github.com/alossix/zappyrent-frontend-assessment.git
 
-Use the application by installing dependencies and starting the server:
+Use the application by installing dependencies in the project directory and starting the server:
+   $ cd zappyrent-frontend-assessment
    $ npm install
    $ npm start
 
