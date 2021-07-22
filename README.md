@@ -3,6 +3,7 @@
 
 ***
 Introduction
+***
 This front-end challenge solution was developed using Create-React-App, React v.17 (Hooks), and Styled-Components. The solution is organized in a folder structure suitable for allowing reuse of individual components throughout the application when and where necessary. 
 
 The user is shown a set of 12 properties displayed from the ZappyRent example API data, inclusive of images, description, pricing, and address data, among other datasets. Filtering is intuitive based on a custom dropdown menu and checkbox solution using filters requested by ZappyRent. Clicking on an individual card will show a modal with additional information in a larger format. 
@@ -12,6 +13,7 @@ Number of columns on desktop view is responsive based on screen sizing; mobile d
 
 *** 
 Installation and Usage
+***
 
 Fork this repo
 Clone this repo
@@ -21,7 +23,9 @@ Use the application by installing dependencies and starting the server:
    $ npm start
 
 
-Noteworthy components:
+***
+Noteworthy Components
+***
 -Custom checkbox
 -Custom dropdown menu with inline display of selected property types, e.g., "Entire Property +2"
 -On-the-fly request to development example API
