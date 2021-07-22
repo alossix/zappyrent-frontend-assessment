@@ -15,20 +15,35 @@ import {
 const TypeSelect = ({ propertyType, setPropertyType }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  const propertyTypeArr = propertyType.map((p) => p);
+
   const clickHandler = (event) => {
     setMenuIsOpen((isOpen) => !isOpen);
-    console.log(menuIsOpen);
   };
 
-  const propertyTypeArr = propertyType.map((p) => p);
+  const menuText = () => {
+    if (menuIsOpen) {
+      return 'Tipologia';
+    } else {
+      if (propertyTypeArr.length === 0) {
+        return 'Tipologia';
+      } else if (propertyTypeArr.length === 1) {
+        return `${propertyTypeArr[0]}`;
+      }
+      return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
+    }
+  };
 
   const changePropertyType = (event) => {
     if (event.target.checked) {
       propertyTypeArr.push(event.target.name);
-      console.log(propertyTypeArr);
-      setPropertyType(propertyTypeArr);
+      setPropertyType(
+        propertyTypeArr.sort(
+          (a, b) =>
+            propertyTypes.indexOf(a) - propertyTypes.indexOf(b),
+        ),
+      );
     } else {
-      console.log(`runs too`);
       propertyTypeArr.splice(
         propertyTypeArr.indexOf(event.target.name),
         1,
@@ -37,7 +52,7 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
     }
   };
 
-  const propertyTypeValues = [
+  const propertyTypes = [
     'Private Room',
     'Entire Property',
     'Shared Room',
@@ -47,12 +62,11 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
   return (
     <>
       <MenuButton onClick={clickHandler}>
-        Tipologia{' '}
+        {menuText()}
         <CaretImage src={menuIsOpen ? CaretDown : CaretUp} />
       </MenuButton>
-
       <PropertyTypeMenu className={menuIsOpen ? 'open' : ''}>
-        {propertyTypeValues.map((val, index) => (
+        {propertyTypes.map((val, index) => (
           <OptionContainer key={index}>
             <Checkbox
               labelName={val}
