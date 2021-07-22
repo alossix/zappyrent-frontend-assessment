@@ -4,6 +4,7 @@ export const ListingsContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 150px;
+  padding-bottom: 40px;
 
   @media (max-width: 780px) {
     padding: 0 20px 20px 20px;
@@ -32,5 +33,6 @@ export const ResultsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-gap: 16px;
   }
 `;

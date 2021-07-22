@@ -10,6 +10,10 @@ export const ModalBackdrop = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+
+  @media (max-width: 780px) {
+    align-items: flex-start;
+  }
 `;
 
 export const Card = styled.div`
@@ -22,6 +26,10 @@ export const Card = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: white;
   padding: 20px 10px;
+
+  @media (max-width: 780px) {
+    margin: 32px 16px 0 16px;
+  }
 `;
 
 export const CloseButtonContainer = styled.div`
@@ -64,62 +72,8 @@ export const AvailableButton = styled.button`
   left: 10px;
 `;
 
-export const Address = styled.p`
-  text-align: center;
-  font-size: 13px;
-  font-weight: 800;
-`;
-
-export const DescriptionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-`;
-
-export const ListingDetailsContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: auto;
-  width: 60%;
-  height: 20px;
-`;
-
-export const ListingDetailContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const ListingDetailNumber = styled.p`
-  display: flex;
-  align-items: flex-end;
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 5px;
-`;
-
-export const ListingDetailText = styled.p`
-  display: flex;
-  align-items: flex-end;
-  color: gray;
-  margin: 0;
-  height: 22px;
-  font-size: 13px;
-`;
-
-export const ListingDescriptionContainer = styled.div`
-  padding: 0 25px;
-`;
-
 export const HR = styled.hr`
   width: 100%;
-  margin: 0;
-`;
-
-export const ListingDescriptionText = styled.p`
-  color: gray;
-  font-size: 13px;
-  text-align: center;
   margin: 0;
 `;
 
@@ -135,7 +89,7 @@ export const CanoneTitle = styled.p`
   font-weight: bold;
   padding-right: 8px;
   margin: 0;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 `;
 
 export const CanonePriceContainer = styled.div`
