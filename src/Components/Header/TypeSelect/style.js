@@ -8,13 +8,23 @@ export const MenuButton = styled.button`
   position: relative;
   background-color: white;
   border-radius: 25px;
-  width: 180px;
+  width: 195px;
   height: 45px;
   border: 2px solid gainsboro;
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: darkgray;
+
+  &.isOpen {
+    color: black;
+  }
+
+  @media (max-width: 780px) {
+    width: 174px;
+    font-size: 14px;
+    font-weight: bold;
+  }
 `;
 
 export const CaretImage = styled.img`
@@ -38,6 +48,10 @@ export const PropertyTypeMenu = styled.div`
     border: 2px solid gainsboro;
     border-radius: 25px;
     z-index: 100;
+
+    @media (max-width: 780px) {
+      top: 115px;
+    }
   }
 `;
 

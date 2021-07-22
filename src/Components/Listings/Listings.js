@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ListingCard from './ListingCard/ListingCard';
+import ListingModal from './ListingModal/ListingModal';
 
 import {
   ListingsContainer,
@@ -9,6 +10,17 @@ import {
 } from './style';
 
 const Listings = ({ listings }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalListing, setModalListing] = useState();
+
+  const modalHandler = (e, listing) => {
+    console.log(listing);
+    document.body.style.overflow = 'hidden';
+    setModalListing(listing);
+    setModalIsOpen(true);
+    console.log(modalIsOpen);
+  };
+
   return (
     <ListingsContainer>
       <ListingsNumber>
@@ -19,6 +31,7 @@ const Listings = ({ listings }) => {
       <ResultsContainer>
         {listings.map((listing) => (
           <ListingCard
+            listing={listing}
             key={listing.id}
             image={listing.images[0].url}
             type={listing.type}
@@ -29,9 +42,17 @@ const Listings = ({ listings }) => {
             description={listing.description}
             price={listing.price}
             available={listing.available}
+            modalHandler={modalHandler}
           />
         ))}
       </ResultsContainer>
+      {modalIsOpen && (
+        <ListingModal
+          modalListing={modalListing}
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+        />
+      )}
     </ListingsContainer>
   );
 };

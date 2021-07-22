@@ -14,6 +14,7 @@ import {
 } from './style';
 
 const ListingCard = ({
+  listing,
   image,
   type,
   title,
@@ -23,9 +24,10 @@ const ListingCard = ({
   description,
   price,
   available,
+  modalHandler,
 }) => {
   return (
-    <Card>
+    <Card onClick={(e) => modalHandler(e, listing)}>
       <ImageContainer src={image}>
         {available && (
           <AvailableButton>Disponibile subito</AvailableButton>
