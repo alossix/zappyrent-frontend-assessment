@@ -13,4 +13,10 @@ export const AvailableLabel = styled.label`
   color: darkgray;
   padding-right: 8px;
   margin-left: 50px;
+
+  @media (max-width: 780px) {
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
 `;

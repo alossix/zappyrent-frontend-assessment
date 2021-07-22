@@ -19,6 +19,12 @@ export const MenuButton = styled.button`
   &.isOpen {
     color: black;
   }
+
+  @media (max-width: 780px) {
+    width: 174px;
+    font-size: 14px;
+    font-weight: bold;
+  }
 `;
 
 export const CaretImage = styled.img`
@@ -42,6 +48,10 @@ export const PropertyTypeMenu = styled.div`
     border: 2px solid gainsboro;
     border-radius: 25px;
     z-index: 100;
+
+    @media (max-width: 780px) {
+      top: 115px;
+    }
   }
 `;
 
