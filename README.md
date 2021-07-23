@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Getting Started with ZappyRent Front-End Assessment Solution by Rich Alossi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+***
+Introduction
+***
+This front-end challenge solution was developed using Create-React-App, React v.17 (Hooks), and Styled-Components. The solution is organized in a folder structure suitable for allowing reuse of individual components throughout the application when and where necessary. 
 
-In the project directory, you can run:
+The user is shown a set of 12 properties displayed from the ZappyRent example API data, inclusive of images, description, pricing, and address data, among other datasets. Filtering is intuitive based on a custom dropdown menu and checkbox solution using filters requested by ZappyRent. Clicking on an individual card will show a modal with additional information in a larger format. 
 
-### `yarn start`
+Number of columns on desktop view is responsive based on screen sizing; mobile display includes a single column and more compact header component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*** 
+Installation and Usage
+***
 
-### `yarn test`
+1. Fork this repo
+2. Clone this repo: 
+   $ git clone https://github.com/alossix/zappyrent-frontend-assessment.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use the application by installing dependencies in the project directory and starting the server:
+   $ cd zappyrent-frontend-assessment
+   $ npm install
+   $ npm start
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***
+Noteworthy Components
+***
+-Custom checkbox
+-Custom dropdown menu with inline display of selected property types, e.g., "Entire Property +2"
+-On-the-fly request to development example API
+-Filter by property type
+-Filter by availability
+-Availability badge ('Disponibile subito')
+-Italian noun/number agreement, i.e., '1 letto'/'2 letti'
+-CSS Grid-based display of listings
+-Modal close/open on card click
+-Responsive sizing on desktop and mobile with CSS Grid, Flexbox, and media queries where necessary
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Questions about the development of the assessment may be directed to Rich Alossi, alossix@gmail.com.
