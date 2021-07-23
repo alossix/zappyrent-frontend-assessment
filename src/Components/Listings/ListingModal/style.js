@@ -62,7 +62,7 @@ export const AvailableButton = styled.button`
   position: relative;
   width: 140px;
   height: 30px;
-  background-color: gainsboro;
+  background-color: lightgray;
   border: none;
   border-radius: 25px;
   font-family: 'Nunito', sans-serif;

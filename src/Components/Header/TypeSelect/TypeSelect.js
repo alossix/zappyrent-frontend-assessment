@@ -63,7 +63,10 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
     <>
       <MenuButton onClick={clickHandler}>
         {menuText()}
-        <CaretImage src={menuIsOpen ? CaretDown : CaretUp} />
+        <CaretImage
+          src={menuIsOpen ? CaretDown : CaretUp}
+          alt="caret"
+        />
       </MenuButton>
       <PropertyTypeMenu className={menuIsOpen ? 'open' : ''}>
         {propertyTypes.map((val, index) => (

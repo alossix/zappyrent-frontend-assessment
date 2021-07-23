@@ -23,7 +23,7 @@ const Header = ({
     <div>
       <HeaderContainer>
         <LogoContainer>
-          <ZappyRentLogo />
+          <ZappyRentLogo alt="ZappyRent logo" />
         </LogoContainer>
         <SelectContainer>
           <TypeSelect

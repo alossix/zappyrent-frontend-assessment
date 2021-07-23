@@ -6,7 +6,7 @@ export const ListingDetailsContainer = styled.div`
   justify-content: space-between;
   height: 35%;
   padding: 15px;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid lightgray;
 `;
 
 export const ListingType = styled.p`

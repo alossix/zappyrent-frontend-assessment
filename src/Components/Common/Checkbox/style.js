@@ -6,7 +6,7 @@ export const CustomCheckbox = styled.input.attrs({
   appearance: none;
   min-width: 27px;
   min-height: 27px;
-  border: 2px solid gainsboro;
+  border: 2px solid lightgray;
   border-radius: 8px;
   position: relative;
   cursor: pointer;
