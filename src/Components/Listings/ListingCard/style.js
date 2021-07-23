@@ -8,6 +8,7 @@ export const Card = styled.div`
   height: 410px;
   border-radius: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
 `;
 
 export const ImageContainer = styled.div`
@@ -23,7 +24,7 @@ export const AvailableButton = styled.button`
   position: relative;
   width: 140px;
   height: 30px;
-  background-color: gainsboro;
+  background-color: lightgray;
   border: none;
   border-radius: 25px;
   font-family: 'Nunito', sans-serif;

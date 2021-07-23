@@ -29,9 +29,11 @@ export const LogoContainer = styled.div`
 export const ZappyRentLogo = styled.img.attrs({
   src: `${Logo}`,
 })`
+  width: 100px;
   height: 20px;
 
   @media (max-width: 780px) {
+    width: 125px;
     height: 25px;
   }
 `;

@@ -10,7 +10,7 @@ export const MenuButton = styled.button`
   border-radius: 25px;
   width: 195px;
   height: 45px;
-  border: 2px solid gainsboro;
+  border: 2px solid lightgray;
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -45,7 +45,7 @@ export const PropertyTypeMenu = styled.div`
     min-width: 180px;
     padding: 12px;
     background-color: white;
-    border: 2px solid gainsboro;
+    border: 2px solid lightgray;
     border-radius: 25px;
     z-index: 100;
 

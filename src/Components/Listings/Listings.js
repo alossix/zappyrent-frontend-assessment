@@ -14,11 +14,9 @@ const Listings = ({ listings }) => {
   const [modalListing, setModalListing] = useState();
 
   const modalHandler = (e, listing) => {
-    console.log(listing);
     document.body.style.overflow = 'hidden';
     setModalListing(listing);
     setModalIsOpen(true);
-    console.log(modalIsOpen);
   };
 
   return (
