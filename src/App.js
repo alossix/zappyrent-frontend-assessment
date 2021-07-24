@@ -11,7 +11,7 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalListing, setModalListing] = useState();
 
-  const modalHandler = (e, listing) => {
+  const modalOpenHandler = (e, listing) => {
     document.body.style.overflow = 'hidden';
     setModalListing(listing);
     setModalIsOpen(true);
@@ -58,7 +58,7 @@ function App() {
       />
       <Listings
         listings={listings}
-        modalHandler={modalHandler}
+        modalOpenHandler={modalOpenHandler}
         modalListing={modalListing}
         modalIsOpen={modalIsOpen}
         setModalIsOpen={setModalIsOpen}

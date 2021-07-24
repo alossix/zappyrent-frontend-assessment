@@ -11,7 +11,7 @@ import {
 
 const Listings = ({
   listings,
-  modalHandler,
+  modalOpenHandler,
   modalListing,
   modalIsOpen,
   setModalIsOpen,
@@ -27,17 +27,8 @@ const Listings = ({
         {listings.map((listing) => (
           <ListingCard
             listing={listing}
+            modalOpenHandler={modalOpenHandler}
             key={listing.id}
-            image={listing.images[0].url}
-            type={listing.type}
-            title={listing.title}
-            tenants={listing.tenants}
-            baths={listing.baths}
-            beds={listing.beds}
-            description={listing.description}
-            price={listing.price}
-            available={listing.available}
-            modalHandler={modalHandler}
           />
         ))}
       </ResultsContainer>

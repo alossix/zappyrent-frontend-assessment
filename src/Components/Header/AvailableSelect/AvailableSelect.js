@@ -4,10 +4,9 @@ import Checkbox from '../../Common/Checkbox/Checkbox';
 
 import { AvailableContainer, AvailableLabel } from './style';
 
-const AvailableSelect = ({ listings, setAvailableChecked }) => {
-  const availableChecked = (event) => {
+const AvailableSelect = ({ setAvailableChecked }) => {
+  const availableChecked = (event) =>
     setAvailableChecked(event.target.checked);
-  };
 
   return (
     <AvailableContainer>

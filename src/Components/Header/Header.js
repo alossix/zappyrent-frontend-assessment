@@ -17,29 +17,24 @@ const Header = ({
   listings,
   propertyType,
   setPropertyType,
-  setAvailableChecked,
   modalIsOpen,
+  setAvailableChecked,
 }) => {
   return (
-    <div>
-      <HeaderContainer>
-        <LogoContainer>
-          <ZappyRentLogo alt="ZappyRent logo" />
-        </LogoContainer>
-        <SelectContainer>
-          <TypeSelect
-            listings={listings}
-            propertyType={propertyType}
-            setPropertyType={setPropertyType}
-            modalIsOpen={modalIsOpen}
-          />
-          <AvailableSelect
-            listings={listings}
-            setAvailableChecked={setAvailableChecked}
-          />
-        </SelectContainer>
-      </HeaderContainer>
-    </div>
+    <HeaderContainer>
+      <LogoContainer>
+        <ZappyRentLogo alt="ZappyRent logo" />
+      </LogoContainer>
+      <SelectContainer>
+        <TypeSelect
+          listings={listings}
+          propertyType={propertyType}
+          setPropertyType={setPropertyType}
+          modalIsOpen={modalIsOpen}
+        />
+        <AvailableSelect setAvailableChecked={setAvailableChecked} />
+      </SelectContainer>
+    </HeaderContainer>
   );
 };
 

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import CloseButton from './close-button.png';
-import DescriptionContainer from './DescriptionContainer/DescriptionContainer';
+import ModalDescription from './ModalDescription/ModalDescription';
+import Canone from './Canone/Canone';
 
 import {
   ModalBackdrop,
@@ -11,50 +12,33 @@ import {
   ListingTitle,
   ImageContainer,
   AvailableButton,
-  HR,
-  CanoneContainer,
-  CanoneTitle,
-  CanonePriceContainer,
-  CanonePrice,
-  CanoneMese,
-  ReserveButton,
 } from './style';
 
 const ListingModal = ({ modalListing, setModalIsOpen }) => {
-  const clickHandler = () => {
+  const { title, images, available, price } = modalListing;
+
+  const modalCloseHandler = () => {
     document.body.style.overflow = 'scroll';
     setModalIsOpen(false);
   };
 
   return (
-    <ModalBackdrop onClick={clickHandler}>
+    <ModalBackdrop onClick={modalCloseHandler}>
       <Card>
         <CloseButtonContainer>
           <CloseButtonImage
             src={CloseButton}
-            onClick={clickHandler}
+            onClick={modalCloseHandler}
           />
         </CloseButtonContainer>
-        <ListingTitle>{modalListing.title}</ListingTitle>
-        <ImageContainer src={modalListing.images[0].url}>
-          {modalListing.available && (
+        <ListingTitle>{title}</ListingTitle>
+        <ImageContainer src={images[0].url}>
+          {available && (
             <AvailableButton>Disponibile subito</AvailableButton>
           )}
         </ImageContainer>
-        <DescriptionContainer modalListing={modalListing} />
-        <HR />
-        <CanoneContainer>
-          <CanonePriceContainer>
-            <CanoneTitle>Canone d’affitto</CanoneTitle>
-            <CanonePrice>
-              €&nbsp;{modalListing.price}&nbsp;
-            </CanonePrice>
-            <CanoneMese>/mese</CanoneMese>
-          </CanonePriceContainer>
-          <ReserveButton onClick={clickHandler}>
-            Prenota alloggio
-          </ReserveButton>
-        </CanoneContainer>
+        <ModalDescription modalListing={modalListing} />
+        <Canone price={price} modalCloseHandler={modalCloseHandler} />
       </Card>
     </ModalBackdrop>
   );

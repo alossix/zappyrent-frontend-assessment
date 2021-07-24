@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 
-import Checkbox from '../../Common/Checkbox/Checkbox';
 import CaretDown from './caret-down.png';
 import CaretUp from './caret-up.png';
+import PropertyTypeMenu from './PropertyTypeMenu/PropertyTypeMenu';
 
-import {
-  MenuButton,
-  CaretImage,
-  PropertyTypeMenu,
-  OptionContainer,
-  PropertyTypeLabel,
-} from './style';
+import { MenuButton, CaretImage } from './style';
 
 const TypeSelect = ({
   propertyType,
@@ -21,9 +15,7 @@ const TypeSelect = ({
 
   const propertyTypeArr = propertyType.map((p) => p);
 
-  const clickHandler = (event) => {
-    setMenuIsOpen((isOpen) => !isOpen);
-  };
+  const menuClickHandler = () => setMenuIsOpen((isOpen) => !isOpen);
 
   const menuText = () => {
     if (menuIsOpen || propertyTypeArr.length === 0) {
@@ -34,34 +26,9 @@ const TypeSelect = ({
     return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
   };
 
-  const changePropertyType = (event) => {
-    if (event.target.checked) {
-      propertyTypeArr.push(event.target.name);
-      setPropertyType(
-        propertyTypeArr.sort(
-          (a, b) =>
-            propertyTypes.indexOf(a) - propertyTypes.indexOf(b),
-        ),
-      );
-    } else {
-      propertyTypeArr.splice(
-        propertyTypeArr.indexOf(event.target.name),
-        1,
-      );
-      setPropertyType(propertyTypeArr);
-    }
-  };
-
-  const propertyTypes = [
-    'Private Room',
-    'Entire Property',
-    'Shared Room',
-    'Studio',
-  ];
-
   return (
     <>
-      <MenuButton onClick={clickHandler}>
+      <MenuButton onClick={menuClickHandler}>
         {menuText()}
         <CaretImage
           src={menuIsOpen ? CaretUp : CaretDown}
@@ -69,20 +36,11 @@ const TypeSelect = ({
         />
       </MenuButton>
       <PropertyTypeMenu
-        className={menuIsOpen && !modalIsOpen ? 'open' : ''}
-      >
-        {propertyTypes.map((val, index) => (
-          <OptionContainer key={index}>
-            <Checkbox
-              labelName={val}
-              id={val}
-              name={val}
-              onChange={changePropertyType}
-            />
-            <PropertyTypeLabel htmlFor={val}>{val}</PropertyTypeLabel>
-          </OptionContainer>
-        ))}
-      </PropertyTypeMenu>
+        propertyTypeArr={propertyTypeArr}
+        setPropertyType={setPropertyType}
+        modalIsOpen={modalIsOpen}
+        menuIsOpen={menuIsOpen}
+      />
     </>
   );
 };
