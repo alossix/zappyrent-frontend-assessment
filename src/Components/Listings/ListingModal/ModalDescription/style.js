@@ -4,25 +4,23 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-bottom: 15px;
-  border-bottom: 1px solid lightgray;
-`;
+  height: 160px;
+  padding: 0 25px;
 
-export const ListingDetailsContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: auto;
-  width: 60%;
-  height: 20px;
+  @media (max-width: 780px) {
+    padding: 0 15px;
+  }
 `;
 
 export const ListingDetailContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 28px;
 `;
 
-export const ListingDetailNumber = styled.p`
+export const DetailNumber = styled.p`
   display: flex;
   align-items: flex-end;
   font-size: 18px;
@@ -30,28 +28,29 @@ export const ListingDetailNumber = styled.p`
   padding-right: 5px;
 `;
 
-export const ListingDetailText = styled.p`
+export const DetailText = styled.p`
   display: flex;
   align-items: flex-end;
   color: gray;
   margin: 0;
   height: 22px;
   font-size: 13px;
-`;
 
-export const ListingDescriptionContainer = styled.div`
-  padding: 0 25px;
-`;
-
-export const ListingDescriptionText = styled.p`
-  color: gray;
-  font-size: 13px;
-  text-align: center;
-  margin: 0;
+  &:not(:last-child) {
+    padding-right: 45px;
+  }
 `;
 
 export const Address = styled.p`
   text-align: center;
   font-size: 13px;
   font-weight: 800;
+  margin: 0;
+`;
+
+export const DescriptionText = styled.p`
+  color: gray;
+  font-size: 13px;
+  text-align: center;
+  margin: 0;
 `;

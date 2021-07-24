@@ -19,13 +19,12 @@ export const ModalBackdrop = styled.div`
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 480px;
-  height: 500px;
+  height: 510px;
   border-radius: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: white;
-  padding: 20px 10px;
 
   @media (max-width: 780px) {
     margin: 32px 16px 0 16px;
@@ -36,26 +35,30 @@ export const CloseButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 20px;
+  margin: 12px 12px 0 0;
 `;
 
 export const CloseButtonImage = styled.img`
   width: 22px;
-  padding-right: 10px;
   cursor: pointer;
 `;
 
-export const ListingTitle = styled.p`
+export const ListingTitle = styled.h2`
   font-size: 18px;
   font-weight: 800;
   text-align: center;
-  margin: 0;
+  margin: 0 15px 15px 15px;
 `;
 
 export const ImageContainer = styled.div`
   background-image: url(${(p) => p.src});
   background-size: cover;
-  height: 170px;
+  height: 160px;
+  margin: 0 10px;
+
+  @media (max-width: 780px) {
+    margin: 0;
+  }
 `;
 
 export const AvailableButton = styled.button`
@@ -65,7 +68,6 @@ export const AvailableButton = styled.button`
   background-color: lightgray;
   border: none;
   border-radius: 25px;
-  font-family: 'Nunito', sans-serif;
   font-size: 13px;
   font-weight: 600;
   top: 10px;

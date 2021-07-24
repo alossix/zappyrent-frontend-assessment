@@ -11,7 +11,6 @@ export const MenuButton = styled.button`
   width: 195px;
   height: 45px;
   border: 2px solid lightgray;
-  font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: darkgray;
