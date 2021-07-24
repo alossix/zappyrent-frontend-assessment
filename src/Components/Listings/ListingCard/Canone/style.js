@@ -4,8 +4,9 @@ export const CanoneContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 15%;
+  height: 60px;
   padding: 0 15px;
+  border-top: 1px solid lightgray;
 `;
 
 export const CanoneTitle = styled.p`

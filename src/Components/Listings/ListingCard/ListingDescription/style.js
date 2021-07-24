@@ -4,9 +4,8 @@ export const ListingDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 35%;
-  padding: 15px;
-  border-bottom: 1px solid lightgray;
+  height: 40%;
+  padding: 0 15px;
 `;
 
 export const ListingType = styled.p`
@@ -16,7 +15,7 @@ export const ListingType = styled.p`
 `;
 
 export const ListingTitle = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   margin: 0;
 `;
@@ -24,7 +23,7 @@ export const ListingTitle = styled.p`
 export const ListingDetailContainer = styled.div`
   display: flex;
   width: 100%;
-  height: 20px;
+  height: 25px;
   align-items: center;
 `;
 
