@@ -18,6 +18,7 @@ const Header = ({
   propertyType,
   setPropertyType,
   setAvailableChecked,
+  modalIsOpen,
 }) => {
   return (
     <div>
@@ -30,6 +31,7 @@ const Header = ({
             listings={listings}
             propertyType={propertyType}
             setPropertyType={setPropertyType}
+            modalIsOpen={modalIsOpen}
           />
           <AvailableSelect
             listings={listings}

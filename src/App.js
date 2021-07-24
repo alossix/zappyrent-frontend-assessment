@@ -8,6 +8,14 @@ function App() {
   const [listings, setListings] = useState([]);
   const [availableChecked, setAvailableChecked] = useState(false);
   const [propertyType, setPropertyType] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalListing, setModalListing] = useState();
+
+  const modalHandler = (e, listing) => {
+    document.body.style.overflow = 'hidden';
+    setModalListing(listing);
+    setModalIsOpen(true);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,9 +54,14 @@ function App() {
         setAvailableChecked={setAvailableChecked}
         propertyType={propertyType}
         setPropertyType={setPropertyType}
+        modalIsOpen={modalIsOpen}
       />
       <Listings
         listings={listings}
+        modalHandler={modalHandler}
+        modalListing={modalListing}
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
         availableChecked={availableChecked}
       />
     </div>

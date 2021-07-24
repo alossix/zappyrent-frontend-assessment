@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import ListingCard from './ListingCard/ListingCard';
 import ListingModal from './ListingModal/ListingModal';
@@ -9,16 +9,13 @@ import {
   ResultsContainer,
 } from './style';
 
-const Listings = ({ listings }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalListing, setModalListing] = useState();
-
-  const modalHandler = (e, listing) => {
-    document.body.style.overflow = 'hidden';
-    setModalListing(listing);
-    setModalIsOpen(true);
-  };
-
+const Listings = ({
+  listings,
+  modalHandler,
+  modalListing,
+  modalIsOpen,
+  setModalIsOpen,
+}) => {
   return (
     <ListingsContainer>
       <ListingsNumber>

@@ -32,6 +32,7 @@ export const AvailableButton = styled.button`
   font-weight: 600;
   top: 10px;
   left: 10px;
+  cursor: pointer;
 `;
 
 export const CanoneContainer = styled.div`

@@ -12,7 +12,11 @@ import {
   PropertyTypeLabel,
 } from './style';
 
-const TypeSelect = ({ propertyType, setPropertyType }) => {
+const TypeSelect = ({
+  propertyType,
+  setPropertyType,
+  modalIsOpen,
+}) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const propertyTypeArr = propertyType.map((p) => p);
@@ -22,16 +26,12 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
   };
 
   const menuText = () => {
-    if (menuIsOpen) {
+    if (menuIsOpen || propertyTypeArr.length === 0) {
       return 'Tipologia';
-    } else {
-      if (propertyTypeArr.length === 0) {
-        return 'Tipologia';
-      } else if (propertyTypeArr.length === 1) {
-        return `${propertyTypeArr[0]}`;
-      }
-      return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
+    } else if (propertyTypeArr.length === 1) {
+      return `${propertyTypeArr[0]}`;
     }
+    return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
   };
 
   const changePropertyType = (event) => {
@@ -64,11 +64,13 @@ const TypeSelect = ({ propertyType, setPropertyType }) => {
       <MenuButton onClick={clickHandler}>
         {menuText()}
         <CaretImage
-          src={menuIsOpen ? CaretDown : CaretUp}
+          src={menuIsOpen ? CaretUp : CaretDown}
           alt="caret"
         />
       </MenuButton>
-      <PropertyTypeMenu className={menuIsOpen ? 'open' : ''}>
+      <PropertyTypeMenu
+        className={menuIsOpen && !modalIsOpen ? 'open' : ''}
+      >
         {propertyTypes.map((val, index) => (
           <OptionContainer key={index}>
             <Checkbox
