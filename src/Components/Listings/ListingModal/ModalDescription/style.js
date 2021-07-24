@@ -4,6 +4,8 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-bottom: 15px;
+  border-bottom: 1px solid lightgray;
 `;
 
 export const ListingDetailsContainer = styled.div`

@@ -12,42 +12,44 @@ import {
 } from './style';
 
 const DescriptionContainer = ({ modalListing }) => {
+  const {
+    tenants,
+    baths,
+    beds,
+    street,
+    street_number,
+    cap,
+    city,
+    description,
+  } = modalListing;
+
   return (
     <ModalContainer>
       <ListingDetailsContainer>
         <ListingDetailContainer>
-          <ListingDetailNumber>
-            {modalListing.tenants}
-          </ListingDetailNumber>
+          <ListingDetailNumber>{tenants}</ListingDetailNumber>
           <ListingDetailText>
-            {modalListing.tenants === 1 ? 'inquilino' : 'inquilini'}
+            {tenants === 1 ? 'inquilino' : 'inquilini'}
           </ListingDetailText>
         </ListingDetailContainer>
         <ListingDetailContainer>
-          <ListingDetailNumber>
-            {modalListing.baths}
-          </ListingDetailNumber>
+          <ListingDetailNumber>{baths}</ListingDetailNumber>
           <ListingDetailText>
-            {modalListing.baths === 1 ? 'bagno' : 'bagni'}
+            {baths === 1 ? 'bagno' : 'bagni'}
           </ListingDetailText>
         </ListingDetailContainer>
         <ListingDetailContainer>
-          <ListingDetailNumber>
-            {modalListing.beds}
-          </ListingDetailNumber>
+          <ListingDetailNumber>{beds}</ListingDetailNumber>
           <ListingDetailText>
-            {modalListing.beds === 1 ? 'letto' : 'letti'}
+            {beds === 1 ? 'letto' : 'letti'}
           </ListingDetailText>
         </ListingDetailContainer>
       </ListingDetailsContainer>
       <Address>
-        {modalListing.street}&nbsp;{modalListing.street_number},
-        &nbsp;{modalListing.cap}&nbsp;{modalListing.city}
+        {street}&nbsp;{street_number}, &nbsp;{cap}&nbsp;{city}
       </Address>
       <ListingDescriptionContainer>
-        <ListingDescriptionText>
-          {modalListing.description}
-        </ListingDescriptionText>
+        <ListingDescriptionText>{description}</ListingDescriptionText>
       </ListingDescriptionContainer>
     </ModalContainer>
   );
