@@ -28,7 +28,7 @@ export const ListingDetailContainer = styled.div`
   align-items: center;
 `;
 
-export const ListingDetailNumber = styled.p`
+export const DetailNumber = styled.p`
   display: flex;
   align-items: flex-end;
   font-size: 18px;
@@ -36,14 +36,14 @@ export const ListingDetailNumber = styled.p`
   padding-right: 5px;
 `;
 
-export const ListingDetailText = styled.p`
+export const DetailText = styled.p`
   display: flex;
   align-items: flex-end;
-  color: gray;
+  font-size: 13px;
+  height: 22px;
   margin: 0;
   padding-right: 35px;
-  height: 22px;
-  font-size: 13px;
+  color: gray;
 `;
 
 export const ListingDescriptionContainer = styled.div`

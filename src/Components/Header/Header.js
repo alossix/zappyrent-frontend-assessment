@@ -1,7 +1,5 @@
 import React from 'react';
 
-// Global imports
-
 // Local imports
 import TypeSelect from './TypeSelect/TypeSelect';
 import AvailableSelect from './AvailableSelect/AvailableSelect';

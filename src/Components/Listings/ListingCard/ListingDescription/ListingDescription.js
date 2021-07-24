@@ -5,8 +5,8 @@ import {
   ListingTitle,
   ListingDetailsContainer,
   ListingDetailContainer,
-  ListingDetailNumber,
-  ListingDetailText,
+  DetailNumber,
+  DetailText,
   ListingDescriptionContainer,
   ListingDescriptionText,
 } from './style';
@@ -24,24 +24,14 @@ const ListingDescription = ({
       <ListingType>{type}</ListingType>
       <ListingTitle>{title}</ListingTitle>
       <ListingDetailContainer>
-        <>
-          <ListingDetailNumber>{tenants}</ListingDetailNumber>
-          <ListingDetailText>
-            {tenants === 1 ? 'inquilino' : 'inquilini'}
-          </ListingDetailText>
-        </>
-        <>
-          <ListingDetailNumber>{baths}</ListingDetailNumber>
-          <ListingDetailText>
-            {baths === 1 ? 'bagno' : 'bagni'}
-          </ListingDetailText>
-        </>
-        <>
-          <ListingDetailNumber>{beds}</ListingDetailNumber>
-          <ListingDetailText>
-            {beds === 1 ? 'letto' : 'letti'}
-          </ListingDetailText>
-        </>
+        <DetailNumber>{tenants}</DetailNumber>
+        <DetailText>
+          {tenants === 1 ? 'inquilino' : 'inquilini'}
+        </DetailText>
+        <DetailNumber>{baths}</DetailNumber>
+        <DetailText>{baths === 1 ? 'bagno' : 'bagni'}</DetailText>
+        <DetailNumber>{beds}</DetailNumber>
+        <DetailText>{beds === 1 ? 'letto' : 'letti'}</DetailText>
       </ListingDetailContainer>
       <ListingDescriptionContainer>
         <ListingDescriptionText>{description}</ListingDescriptionText>

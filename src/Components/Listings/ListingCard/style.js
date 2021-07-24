@@ -27,7 +27,6 @@ export const AvailableButton = styled.button`
   background-color: lightgray;
   border: none;
   border-radius: 25px;
-  font-family: 'Nunito', sans-serif;
   font-size: 13px;
   font-weight: 600;
   top: 10px;

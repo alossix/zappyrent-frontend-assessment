@@ -3,7 +3,18 @@ import styled from 'styled-components';
 export const CanoneContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+`;
+
+export const CanonePriceContainer = styled.div`
+  display: flex;
+  height: 36px;
+
+  @media (max-width: 780px) {
+    margin: 10px auto;
+    height: 24px;
+  }
 `;
 
 export const CanoneTitle = styled.p`
@@ -12,11 +23,6 @@ export const CanoneTitle = styled.p`
   font-weight: bold;
   padding-right: 8px;
   margin: 0;
-  margin-bottom: 16px;
-`;
-
-export const CanonePriceContainer = styled.div`
-  display: flex;
 `;
 
 export const CanonePrice = styled.p`
@@ -39,7 +45,6 @@ export const ReserveButton = styled.button`
   border: none;
   border-radius: 25px;
   color: white;
-  font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;

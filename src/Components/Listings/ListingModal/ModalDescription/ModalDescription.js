@@ -3,12 +3,10 @@ import React from 'react';
 import {
   ModalContainer,
   Address,
-  ListingDetailsContainer,
   ListingDetailContainer,
-  ListingDetailNumber,
-  ListingDetailText,
-  ListingDescriptionContainer,
-  ListingDescriptionText,
+  DetailNumber,
+  DetailText,
+  DescriptionText,
 } from './style';
 
 const DescriptionContainer = ({ modalListing }) => {
@@ -25,32 +23,20 @@ const DescriptionContainer = ({ modalListing }) => {
 
   return (
     <ModalContainer>
-      <ListingDetailsContainer>
-        <ListingDetailContainer>
-          <ListingDetailNumber>{tenants}</ListingDetailNumber>
-          <ListingDetailText>
-            {tenants === 1 ? 'inquilino' : 'inquilini'}
-          </ListingDetailText>
-        </ListingDetailContainer>
-        <ListingDetailContainer>
-          <ListingDetailNumber>{baths}</ListingDetailNumber>
-          <ListingDetailText>
-            {baths === 1 ? 'bagno' : 'bagni'}
-          </ListingDetailText>
-        </ListingDetailContainer>
-        <ListingDetailContainer>
-          <ListingDetailNumber>{beds}</ListingDetailNumber>
-          <ListingDetailText>
-            {beds === 1 ? 'letto' : 'letti'}
-          </ListingDetailText>
-        </ListingDetailContainer>
-      </ListingDetailsContainer>
+      <ListingDetailContainer>
+        <DetailNumber>{tenants}</DetailNumber>
+        <DetailText>
+          {tenants === 1 ? 'inquilino' : 'inquilini'}
+        </DetailText>
+        <DetailNumber>{baths}</DetailNumber>
+        <DetailText>{baths === 1 ? 'bagno' : 'bagni'}</DetailText>
+        <DetailNumber>{beds}</DetailNumber>
+        <DetailText>{beds === 1 ? 'letto' : 'letti'}</DetailText>
+      </ListingDetailContainer>
       <Address>
-        {street}&nbsp;{street_number}, &nbsp;{cap}&nbsp;{city}
+        {street}&nbsp;{street_number},&nbsp;{cap}&nbsp;{city}
       </Address>
-      <ListingDescriptionContainer>
-        <ListingDescriptionText>{description}</ListingDescriptionText>
-      </ListingDescriptionContainer>
+      <DescriptionText>{description}</DescriptionText>
     </ModalContainer>
   );
 };
