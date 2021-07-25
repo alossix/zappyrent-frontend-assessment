@@ -22,8 +22,9 @@ const TypeSelect = ({
       return 'Tipologia';
     } else if (propertyTypeArr.length === 1) {
       return `${propertyTypeArr[0]}`;
+    } else {
+      return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
     }
-    return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
   };
 
   return (

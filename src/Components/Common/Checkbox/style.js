@@ -16,14 +16,15 @@ export const CustomCheckbox = styled.input.attrs({
     display: flex;
     justify-content: center;
     align-items: center;
+
     &:after {
       display: flex;
       justify-content: center;
       align-items: center;
       content: '';
       position: absolute;
-      width: 74%;
-      height: 74%;
+      width: 76%;
+      height: 75%;
       border: 3px solid white;
       border-radius: 6px;
     }
