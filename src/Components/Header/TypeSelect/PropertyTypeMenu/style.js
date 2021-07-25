@@ -8,12 +8,12 @@ export const PropertyTypeMenuDiv = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 165px;
+    top: 164px;
     min-width: 180px;
     padding: 12px;
     background-color: white;
     border: 2px solid lightgray;
-    border-radius: 25px;
+    border-radius: 18px;
     z-index: 100;
 
     @media (max-width: 780px) {

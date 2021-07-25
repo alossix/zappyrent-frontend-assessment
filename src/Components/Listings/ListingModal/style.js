@@ -27,6 +27,7 @@ export const Card = styled.div`
   background-color: white;
 
   @media (max-width: 780px) {
+    height: 540px;
     margin: 32px 16px 0 16px;
   }
 `;
@@ -44,19 +45,24 @@ export const CloseButtonImage = styled.img`
 `;
 
 export const ListingTitle = styled.h2`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   text-align: center;
   margin: 0 15px 15px 15px;
+
+  @media (max-width: 780px) {
+    padding: 0 10px;
+  }
 `;
 
 export const ImageContainer = styled.div`
   background-image: url(${(p) => p.src});
   background-size: cover;
-  height: 160px;
+  height: 150px;
   margin: 0 10px;
 
   @media (max-width: 780px) {
+    height: 160px;
     margin: 0;
   }
 `;
