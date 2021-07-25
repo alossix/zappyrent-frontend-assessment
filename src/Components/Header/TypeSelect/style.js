@@ -8,7 +8,7 @@ export const MenuButton = styled.button`
   position: relative;
   background-color: white;
   border-radius: 25px;
-  width: 185px;
+  width: 195px;
   height: 45px;
   border: 2px solid lightgray;
   font-size: 16px;
