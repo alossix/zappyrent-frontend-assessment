@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ModalContext from '../../../../store/modal-context';
 
 import {
   ModalContainer,
@@ -9,7 +10,9 @@ import {
   DescriptionText,
 } from './style';
 
-const DescriptionContainer = ({ modalListing }) => {
+const DescriptionContainer = () => {
+  const modalCtx = useContext(ModalContext);
+
   const {
     tenants,
     baths,
@@ -19,7 +22,7 @@ const DescriptionContainer = ({ modalListing }) => {
     cap,
     city,
     description,
-  } = modalListing;
+  } = modalCtx.modalListing;
 
   return (
     <ModalContainer>

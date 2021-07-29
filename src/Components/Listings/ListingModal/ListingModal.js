@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import CloseButton from './close-button.png';
 import ModalDescription from './ModalDescription/ModalDescription';
@@ -13,22 +13,19 @@ import {
   ImageContainer,
   AvailableButton,
 } from './style';
+import ModalContext from '../../../store/modal-context';
 
-const ListingModal = ({ modalListing, setModalIsOpen }) => {
-  const { title, images, available, price } = modalListing;
-
-  const modalCloseHandler = () => {
-    document.body.style.overflow = 'scroll';
-    setModalIsOpen(false);
-  };
+const ListingModal = () => {
+  const modalCtx = useContext(ModalContext);
+  const { title, images, available, price } = modalCtx.modalListing;
 
   return (
-    <ModalBackdrop onClick={modalCloseHandler}>
+    <ModalBackdrop onClick={modalCtx.modalCloseHandler}>
       <Card>
         <CloseButtonContainer>
           <CloseButtonImage
             src={CloseButton}
-            onClick={modalCloseHandler}
+            onClick={modalCtx.modalCloseHandler}
           />
         </CloseButtonContainer>
         <ListingTitle>{title}</ListingTitle>
@@ -37,8 +34,8 @@ const ListingModal = ({ modalListing, setModalIsOpen }) => {
             <AvailableButton>Disponibile subito</AvailableButton>
           )}
         </ImageContainer>
-        <ModalDescription modalListing={modalListing} />
-        <Canone price={price} modalCloseHandler={modalCloseHandler} />
+        <ModalDescription />
+        <Canone price={price} />
       </Card>
     </ModalBackdrop>
   );

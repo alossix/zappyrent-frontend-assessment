@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import ModalContext from '../../store/modal-context';
+import ListingContext from '../../store/listing-context';
 import ListingCard from './ListingCard/ListingCard';
 import ListingModal from './ListingModal/ListingModal';
 
@@ -9,13 +11,12 @@ import {
   ResultsContainer,
 } from './style';
 
-const Listings = ({
-  listings,
-  modalOpenHandler,
-  modalListing,
-  modalIsOpen,
-  setModalIsOpen,
-}) => {
+const Listings = () => {
+  const modalCtx = useContext(ModalContext);
+  const listingCtx = useContext(ListingContext);
+  const { modalIsOpen } = modalCtx;
+  const { listings } = listingCtx;
+
   return (
     <ListingsContainer>
       <ListingsNumber>
@@ -25,20 +26,10 @@ const Listings = ({
       </ListingsNumber>
       <ResultsContainer>
         {listings.map((listing) => (
-          <ListingCard
-            listing={listing}
-            modalOpenHandler={modalOpenHandler}
-            key={listing.id}
-          />
+          <ListingCard listing={listing} key={listing.id} />
         ))}
       </ResultsContainer>
-      {modalIsOpen && (
-        <ListingModal
-          modalListing={modalListing}
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-        />
-      )}
+      {modalIsOpen && <ListingModal />}
     </ListingsContainer>
   );
 };

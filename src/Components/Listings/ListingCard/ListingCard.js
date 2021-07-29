@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import ListingDescription from './ListingDescription/ListingDescription';
 import Canone from './Canone/Canone';
+import ModalContext from '../../../store/modal-context';
 
 import { Card, ImageContainer, AvailableButton } from './style';
 
-const ListingCard = ({ listing, modalOpenHandler }) => {
+const ListingCard = ({ listing }) => {
+  const { modalOpenHandler } = useContext(ModalContext);
+
   const {
     images,
     type,
@@ -19,7 +22,7 @@ const ListingCard = ({ listing, modalOpenHandler }) => {
   } = listing;
 
   return (
-    <Card onClick={(e) => modalOpenHandler(e, listing)}>
+    <Card onClick={() => modalOpenHandler(listing)}>
       <ImageContainer src={images[0].url}>
         {available && (
           <AvailableButton>Disponibile subito</AvailableButton>

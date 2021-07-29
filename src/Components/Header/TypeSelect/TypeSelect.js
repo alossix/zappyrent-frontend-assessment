@@ -1,31 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
+import ListingContext from '../../../store/listing-context';
 import CaretDown from './caret-down.png';
 import CaretUp from './caret-up.png';
 import PropertyTypeMenu from './PropertyTypeMenu/PropertyTypeMenu';
 
 import { MenuButton, CaretImage } from './style';
 
-const TypeSelect = ({
-  propertyType,
-  setPropertyType,
-  modalIsOpen,
-}) => {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const propertyTypeArr = propertyType.map((p) => p);
-
-  const menuClickHandler = () => setMenuIsOpen((isOpen) => !isOpen);
-
-  const menuText = () => {
-    if (menuIsOpen || propertyTypeArr.length === 0) {
-      return 'Tipologia';
-    } else if (propertyTypeArr.length === 1) {
-      return `${propertyTypeArr[0]}`;
-    } else {
-      return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
-    }
-  };
+const TypeSelect = () => {
+  const {
+    menuClickHandler,
+    menuText,
+    propertyTypeArr,
+    setPropertyType,
+    menuIsOpen,
+  } = useContext(ListingContext);
 
   return (
     <>
@@ -39,7 +28,6 @@ const TypeSelect = ({
       <PropertyTypeMenu
         propertyTypeArr={propertyTypeArr}
         setPropertyType={setPropertyType}
-        modalIsOpen={modalIsOpen}
         menuIsOpen={menuIsOpen}
       />
     </>
