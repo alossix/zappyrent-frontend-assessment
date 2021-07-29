@@ -13,30 +13,44 @@ Number of columns on desktop view is responsive based on screen sizing; mobile d
 
 *** 
 Installation and Usage
-***
 
 1. Fork this repo
+
 2. Clone this repo: 
+
    $ git clone https://github.com/alossix/zappyrent-frontend-assessment.git
 
 Use the application by installing dependencies in the project directory and starting the server:
+
    $ cd zappyrent-frontend-assessment
+   
    $ npm install
+   
    $ npm start
 
 
 ***
 Noteworthy Components
-***
+
 -Custom checkbox
+
 -Custom dropdown menu with inline display of selected property types, e.g., "Entire Property +2"
+
 -On-the-fly request to development example API
+
 -Filter by property type
+
 -Filter by availability
+
 -Availability badge ('Disponibile subito')
+
 -Italian noun/number agreement, i.e., '1 letto'/'2 letti'
+
 -CSS Grid-based display of listings
+
 -Modal close/open on card click
+
 -Responsive sizing on desktop and mobile with CSS Grid, Flexbox, and media queries where necessary
+
 
 Questions about the development of the assessment may be directed to Rich Alossi, alossix@gmail.com.
