@@ -12,10 +12,8 @@ import {
 } from './style';
 
 const Listings = () => {
-  const modalCtx = useContext(ModalContext);
-  const listingCtx = useContext(ListingContext);
-  const { modalIsOpen } = modalCtx;
-  const { listings } = listingCtx;
+  const { modalIsOpen } = useContext(ModalContext);
+  const { listings } = useContext(ListingContext);
 
   return (
     <ListingsContainer>

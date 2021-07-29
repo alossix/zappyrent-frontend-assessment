@@ -6,7 +6,7 @@ import Checkbox from '../../Common/Checkbox/Checkbox';
 import { AvailableContainer, AvailableLabel } from './style';
 
 const AvailableSelect = () => {
-  const listingCtx = useContext(ListingContext);
+  const { availableCheckedHandler } = useContext(ListingContext);
 
   return (
     <AvailableContainer>
@@ -16,9 +16,7 @@ const AvailableSelect = () => {
       <Checkbox
         id="available"
         name="available"
-        onChange={(event) =>
-          listingCtx.availableCheckedHandler(event)
-        }
+        onChange={(event) => availableCheckedHandler(event)}
       />
     </AvailableContainer>
   );

@@ -23,9 +23,6 @@ export const ListingContextProvider = (props) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [availableChecked, setAvailableChecked] = useState(false);
 
-  const availableCheckedHandler = (event) =>
-    setAvailableChecked(event.target.checked);
-
   useEffect(() => {
     const fetchData = async () => {
       const results = await axios(
@@ -55,6 +52,9 @@ export const ListingContextProvider = (props) => {
     };
     fetchData();
   }, [availableChecked, propertyType]);
+
+  const availableCheckedHandler = (event) =>
+    setAvailableChecked(event.target.checked);
 
   const propertyTypeArr = propertyType.map((p) => p);
 
