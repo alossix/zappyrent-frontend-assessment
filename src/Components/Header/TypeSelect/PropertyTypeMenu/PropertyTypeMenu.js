@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import ModalContext from '../../../../store/modal-context';
+import ListingContext from '../../../../store/listing-context';
 import Checkbox from '../../../Common/Checkbox/Checkbox';
 
 import {
@@ -8,36 +10,10 @@ import {
   PropertyTypeLabel,
 } from './style';
 
-const PropertyTypeMenu = ({
-  propertyTypeArr,
-  setPropertyType,
-  modalIsOpen,
-  menuIsOpen,
-}) => {
-  const changePropertyType = (event) => {
-    if (event.target.checked) {
-      propertyTypeArr.push(event.target.name);
-      setPropertyType(
-        propertyTypeArr.sort(
-          (a, b) =>
-            propertyTypes.indexOf(a) - propertyTypes.indexOf(b),
-        ),
-      );
-    } else {
-      propertyTypeArr.splice(
-        propertyTypeArr.indexOf(event.target.name),
-        1,
-      );
-      setPropertyType(propertyTypeArr);
-    }
-  };
-
-  const propertyTypes = [
-    'Private Room',
-    'Entire Property',
-    'Shared Room',
-    'Studio',
-  ];
+const PropertyTypeMenu = () => {
+  const { modalIsOpen } = useContext(ModalContext);
+  const { menuIsOpen, propertyTypes, changePropertyType } =
+    useContext(ListingContext);
 
   return (
     <PropertyTypeMenuDiv

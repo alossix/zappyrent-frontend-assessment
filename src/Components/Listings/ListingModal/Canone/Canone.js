@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ModalContext from '../../../../store/modal-context';
 
 import {
   CanoneContainer,
@@ -9,7 +10,9 @@ import {
   ReserveButton,
 } from './style';
 
-const Canone = ({ price, modalCloseHandler }) => {
+const Canone = ({ price }) => {
+  const { modalCloseHandler } = useContext(ModalContext);
+
   return (
     <CanoneContainer>
       <CanonePriceContainer>

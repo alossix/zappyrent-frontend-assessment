@@ -11,26 +11,15 @@ import {
   SelectContainer,
 } from './style';
 
-const Header = ({
-  listings,
-  propertyType,
-  setPropertyType,
-  modalIsOpen,
-  setAvailableChecked,
-}) => {
+const Header = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
         <ZappyRentLogo alt="ZappyRent logo" />
       </LogoContainer>
       <SelectContainer>
-        <TypeSelect
-          listings={listings}
-          propertyType={propertyType}
-          setPropertyType={setPropertyType}
-          modalIsOpen={modalIsOpen}
-        />
-        <AvailableSelect setAvailableChecked={setAvailableChecked} />
+        <TypeSelect />
+        <AvailableSelect />
       </SelectContainer>
     </HeaderContainer>
   );
