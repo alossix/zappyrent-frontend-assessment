@@ -14,11 +14,15 @@ const TypeSelect = () => {
     propertyTypeArr,
     setPropertyType,
     menuIsOpen,
+    isActive,
   } = useContext(ListingContext);
 
   return (
     <>
-      <MenuButton onClick={menuClickHandler}>
+      <MenuButton
+        onClick={menuClickHandler}
+        className={isActive && 'active'}
+      >
         {menuText()}
         <CaretImage
           src={menuIsOpen ? CaretUp : CaretDown}

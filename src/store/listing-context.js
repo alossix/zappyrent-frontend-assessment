@@ -20,8 +20,9 @@ const ListingContext = React.createContext({
 export const ListingContextProvider = (props) => {
   const [listings, setListings] = useState([]);
   const [propertyType, setPropertyType] = useState([]);
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [availableChecked, setAvailableChecked] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,10 +65,13 @@ export const ListingContextProvider = (props) => {
 
   const menuText = () => {
     if (menuIsOpen || propertyTypeArr.length === 0) {
+      setIsActive(false);
       return 'Tipologia';
     } else if (propertyTypeArr.length === 1) {
+      setIsActive(true);
       return `${propertyTypeArr[0]}`;
     } else {
+      setIsActive(true);
       return `${propertyTypeArr[0]} +${propertyTypeArr.length - 1}`;
     }
   };
@@ -111,6 +115,8 @@ export const ListingContextProvider = (props) => {
         menuText,
         menuIsOpen,
         setMenuIsOpen,
+        isActive,
+        setIsActive,
         changePropertyType,
         propertyTypes,
       }}
